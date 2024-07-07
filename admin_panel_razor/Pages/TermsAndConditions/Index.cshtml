@@ -1,0 +1,44 @@
+﻿@page
+@model admin_panel_razor.Pages.TermsAndConditionsModel
+
+<h1>Game Settings</h1>
+<h4>Terms & Condition </h4>
+
+<div class="row">
+    <div class="col-md-3">
+        <br />
+        <a class="btn btn-outline-primary" href="/GeneralSettings">General Settings</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/LogoSettings">Logo Settings</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/GameConfig">Game Config</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/SocialMedia">Social Media</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/ContactUs">Contact Us</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/AboutUs">About Us</a>
+        <br /><br />
+        <a class="btn btn-primary" href="/TermsAndConditions">Terms & Condition</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/PrivacyPolicies">Privacy Policy</a>
+    </div>
+
+    <div class="col-md-6">
+        <form method="post">
+            <div class="form-group">
+                <label for="Title">Terms & Conditions Title</label>
+                <input type="text" class="form-control" id="Title" name="TermsAndConditions.Title" value="@Model.TermsAndConditions.Title" required />
+            </div>
+            <div class="form-group">
+                <label for="Slug">Terms & Conditions Slug</label>
+                <input type="text" class="form-control" id="Slug" name="TermsAndConditions.Slug" value="@Model.TermsAndConditions.Slug" required />
+            </div>
+            <div class="form-group">
+                <label for="Description">Terms & Conditions Description</label>
+                <textarea class="form-control" id="Description" name="TermsAndConditions.Description" rows="5" required>@Model.TermsAndConditions.Description</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update T&C</button>
+        </form>
+    </div>
+</div>

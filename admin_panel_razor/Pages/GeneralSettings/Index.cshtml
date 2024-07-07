@@ -1,0 +1,61 @@
+﻿@page
+@model admin_panel_razor.Pages.GeneralSettings.IndexModel
+@{
+    ViewData["Title"] = "General Settings";
+}
+
+<h1>Game Settings</h1>
+<h4>General Settings</h4>
+
+<div class="row">
+    <div class="col-md-3">
+        <br />
+        <a class="btn btn-primary" href="/GeneralSettings">General Settings</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/LogoSettings">Logo Settings</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/GameConfig">Game Config</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/SocialMedia">Social Media</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/ContactUs">Contact Us</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/AboutUs">About Us</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/TermsAndConditions">Terms & Condition</a>
+        <br /><br />
+        <a class="btn btn-outline-primary" href="/PrivacyPolicies">Privacy Policy</a>
+    </div>
+
+    <div class="col-md-6">
+        <form method="post">
+            <div class="form-group">
+                <label for="WebsiteName">Website Name</label>
+                <input type="text" class="form-control" id="WebsiteName" name="GeneralSettings.WebsiteName" value="@Model.GeneralSettings?.WebsiteName" />
+            </div>
+            <div class="form-group">
+                <label for="WebsiteURL">Website URL</label>
+                <input type="text" class="form-control" id="WebsiteURL" name="GeneralSettings.WebsiteURL" value="@Model.GeneralSettings?.WebsiteURL" />
+            </div>
+            <div class="form-group">
+                <label for="WebsiteTagline">Website Tagline</label>
+                <input type="text" class="form-control" id="WebsiteTagline" name="GeneralSettings.WebsiteTagline" value="@Model.GeneralSettings?.WebsiteTagline" />
+            </div>
+            <div class="form-group">
+                <label for="WebsiteKeyword">Website Keyword</label>
+                <input type="text" class="form-control" id="WebsiteKeyword" name="GeneralSettings.WebsiteKeyword" value="@Model.GeneralSettings?.WebsiteKeyword" />
+            </div>
+            <div class="form-group">
+                <label for="WebsiteDescription">Website Description</label>
+                <input type="text" class="form-control" id="WebsiteDescription" name="GeneralSettings.WebsiteDescription" value="@Model.GeneralSettings?.WebsiteDescription" />
+            </div>
+            <div class="form-group">
+                <label for="FooterCopyright">Footer Copyright</label>
+                <input type="text" class="form-control" id="FooterCopyright" name="GeneralSettings.FooterCopyright" value="@Model.GeneralSettings?.FooterCopyright" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Settings</button>
+        </form>
+    </div>
+</div>
+

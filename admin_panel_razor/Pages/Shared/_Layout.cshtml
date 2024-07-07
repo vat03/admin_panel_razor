@@ -1,0 +1,78 @@
+﻿@* The og *@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin Panel</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Index">
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Users">
+                                All Player
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ShopCoins">
+                                Shop Coin
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/BidValues">
+                                Bid Value
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/WithdrawRequests">
+                                Withdraw Request
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Transactions">
+                                Transactions
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/GeneralSettings">
+                                Game Settings
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="#">
+                                Account Settings
+                            </a>
+                        </li>
+                        @* <li class="nav-item">
+                            <a class="nav-link" asp-page="/Logout">
+                                Logout
+                            </a>
+                        </li> *@
+                        <!-- Add other links as necessary -->
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

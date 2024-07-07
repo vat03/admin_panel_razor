@@ -1,0 +1,64 @@
+﻿@page
+@model admin_panel_razor.Pages.GameConfig.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>GameConfig</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="GameConfig.AdminCommission" class="control-label"></label>
+                <input asp-for="GameConfig.AdminCommission" class="form-control" />
+                <span asp-validation-for="GameConfig.AdminCommission" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameConfig.SignupBonus" class="control-label"></label>
+                <input asp-for="GameConfig.SignupBonus" class="form-control" />
+                <span asp-validation-for="GameConfig.SignupBonus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameConfig.SupportMail" class="control-label"></label>
+                <input asp-for="GameConfig.SupportMail" class="form-control" />
+                <span asp-validation-for="GameConfig.SupportMail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameConfig.WhatsappLink" class="control-label"></label>
+                <input asp-for="GameConfig.WhatsappLink" class="form-control" />
+                <span asp-validation-for="GameConfig.WhatsappLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameConfig.YoutubeLink" class="control-label"></label>
+                <input asp-for="GameConfig.YoutubeLink" class="form-control" />
+                <span asp-validation-for="GameConfig.YoutubeLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameConfig.ApiKey" class="control-label"></label>
+                <input asp-for="GameConfig.ApiKey" class="form-control" />
+                <span asp-validation-for="GameConfig.ApiKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GameConfig.SecretKey" class="control-label"></label>
+                <input asp-for="GameConfig.SecretKey" class="form-control" />
+                <span asp-validation-for="GameConfig.SecretKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

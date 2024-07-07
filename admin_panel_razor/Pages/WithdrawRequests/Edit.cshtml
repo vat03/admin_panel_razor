@@ -1,0 +1,55 @@
+﻿@page
+@model admin_panel_razor.Pages.WithdrawRequests.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>WithdrawRequest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="WithdrawRequest.RequestId" />
+            <div class="form-group">
+                <label asp-for="WithdrawRequest.PlayerId" class="control-label"></label>
+                <input asp-for="WithdrawRequest.PlayerId" class="form-control" />
+                <span asp-validation-for="WithdrawRequest.PlayerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WithdrawRequest.PaymentMethod" class="control-label"></label>
+                <input asp-for="WithdrawRequest.PaymentMethod" class="form-control" />
+                <span asp-validation-for="WithdrawRequest.PaymentMethod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WithdrawRequest.Account" class="control-label"></label>
+                <input asp-for="WithdrawRequest.Account" class="form-control" />
+                <span asp-validation-for="WithdrawRequest.Account" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WithdrawRequest.Status" class="control-label"></label>
+                <input asp-for="WithdrawRequest.Status" class="form-control" />
+                <span asp-validation-for="WithdrawRequest.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WithdrawRequest.Amount" class="control-label"></label>
+                <input asp-for="WithdrawRequest.Amount" class="form-control" />
+                <span asp-validation-for="WithdrawRequest.Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

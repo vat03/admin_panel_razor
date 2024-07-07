@@ -1,0 +1,60 @@
+﻿@page
+@model admin_panel_razor.Pages.GeneralSettings.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>GeneralSetting</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="GeneralSetting.Id" />
+            <div class="form-group">
+                <label asp-for="GeneralSetting.WebsiteName" class="control-label"></label>
+                <input asp-for="GeneralSetting.WebsiteName" class="form-control" />
+                <span asp-validation-for="GeneralSetting.WebsiteName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralSetting.WebsiteURL" class="control-label"></label>
+                <input asp-for="GeneralSetting.WebsiteURL" class="form-control" />
+                <span asp-validation-for="GeneralSetting.WebsiteURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralSetting.WebsiteTagline" class="control-label"></label>
+                <input asp-for="GeneralSetting.WebsiteTagline" class="form-control" />
+                <span asp-validation-for="GeneralSetting.WebsiteTagline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralSetting.WebsiteKeyword" class="control-label"></label>
+                <input asp-for="GeneralSetting.WebsiteKeyword" class="form-control" />
+                <span asp-validation-for="GeneralSetting.WebsiteKeyword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralSetting.WebsiteDescription" class="control-label"></label>
+                <input asp-for="GeneralSetting.WebsiteDescription" class="form-control" />
+                <span asp-validation-for="GeneralSetting.WebsiteDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneralSetting.FooterCopyright" class="control-label"></label>
+                <input asp-for="GeneralSetting.FooterCopyright" class="form-control" />
+                <span asp-validation-for="GeneralSetting.FooterCopyright" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

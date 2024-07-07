@@ -1,0 +1,64 @@
+﻿@page
+@model admin_panel_razor.Pages.GameConfig.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GameConfig</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GameConfig.AdminCommission)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GameConfig.AdminCommission)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GameConfig.SignupBonus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GameConfig.SignupBonus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GameConfig.SupportMail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GameConfig.SupportMail)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GameConfig.WhatsappLink)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GameConfig.WhatsappLink)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GameConfig.YoutubeLink)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GameConfig.YoutubeLink)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GameConfig.ApiKey)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GameConfig.ApiKey)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GameConfig.SecretKey)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GameConfig.SecretKey)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="GameConfig.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

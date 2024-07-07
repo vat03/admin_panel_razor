@@ -1,0 +1,70 @@
+﻿@page
+@model admin_panel_razor.Pages.SocialMedia.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>SocialMedia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SocialMedia.Id" />
+            <div class="form-group">
+                <label asp-for="SocialMedia.Facebook" class="control-label"></label>
+                <input asp-for="SocialMedia.Facebook" class="form-control" />
+                <span asp-validation-for="SocialMedia.Facebook" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SocialMedia.Twitter" class="control-label"></label>
+                <input asp-for="SocialMedia.Twitter" class="form-control" />
+                <span asp-validation-for="SocialMedia.Twitter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SocialMedia.LinkedIn" class="control-label"></label>
+                <input asp-for="SocialMedia.LinkedIn" class="form-control" />
+                <span asp-validation-for="SocialMedia.LinkedIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SocialMedia.Instagram" class="control-label"></label>
+                <input asp-for="SocialMedia.Instagram" class="form-control" />
+                <span asp-validation-for="SocialMedia.Instagram" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SocialMedia.YouTube" class="control-label"></label>
+                <input asp-for="SocialMedia.YouTube" class="form-control" />
+                <span asp-validation-for="SocialMedia.YouTube" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SocialMedia.WhatsApp" class="control-label"></label>
+                <input asp-for="SocialMedia.WhatsApp" class="form-control" />
+                <span asp-validation-for="SocialMedia.WhatsApp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SocialMedia.Pinterest" class="control-label"></label>
+                <input asp-for="SocialMedia.Pinterest" class="form-control" />
+                <span asp-validation-for="SocialMedia.Pinterest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SocialMedia.GitHub" class="control-label"></label>
+                <input asp-for="SocialMedia.GitHub" class="form-control" />
+                <span asp-validation-for="SocialMedia.GitHub" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

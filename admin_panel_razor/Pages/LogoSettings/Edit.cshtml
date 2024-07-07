@@ -1,0 +1,45 @@
+﻿@page
+@model admin_panel_razor.Pages.LogoSettings.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>LogoSetting</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="LogoSetting.Id" />
+            <div class="form-group">
+                <label asp-for="LogoSetting.HeaderLogo" class="control-label"></label>
+                <input asp-for="LogoSetting.HeaderLogo" class="form-control" />
+                <span asp-validation-for="LogoSetting.HeaderLogo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LogoSetting.FooterLogo" class="control-label"></label>
+                <input asp-for="LogoSetting.FooterLogo" class="form-control" />
+                <span asp-validation-for="LogoSetting.FooterLogo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LogoSetting.Favicon" class="control-label"></label>
+                <input asp-for="LogoSetting.Favicon" class="form-control" />
+                <span asp-validation-for="LogoSetting.Favicon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

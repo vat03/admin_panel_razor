@@ -1,0 +1,52 @@
+﻿@page
+@model admin_panel_razor.Pages.ShopCoins.IndexModel
+@{
+    ViewData["Title"] = "Shop Coins";
+}
+
+<h1>Shop Coins</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Add New Shop Coin</h2>
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="ShopCoin.Value" class="control-label"></label>
+                <input asp-for="ShopCoin.Value" class="form-control" />
+                <span asp-validation-for="ShopCoin.Value" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <h2>All Shop Coins</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Shop Coin</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ShopCoinList)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Value INR</td>
+                        <td>
+                            <a asp-page="/ShopCoins/Edit" asp-route-id="@item.Id" class="btn btn-secondary">Edit</a>
+                            <a asp-page="/ShopCoins/Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
+                            <a asp-page="/ShopCoins/Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

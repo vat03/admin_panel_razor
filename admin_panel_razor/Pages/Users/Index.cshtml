@@ -1,0 +1,41 @@
+﻿@page
+@model admin_panel_razor.Pages.Users.IndexModel
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1>Users</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Wallet Amount</th>
+            <th>win Amount</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Users)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.WalletAmount</td>
+                <td>@item.WinAmount</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-secondary">Edit</a>
+                    <a asp-page="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
+                    <a asp-page="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
